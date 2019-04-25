@@ -14,11 +14,12 @@
     width: 100%;
     overflow-x: hidden;
     scroll-behavior: auto;
+    overscroll-behavior-y: none;
 }
 
 .iframe-container-inner {
     width: 100%;
-    height: 300px;
+    height: 202px;
     background: #000;
     color: #fff;
 }
@@ -30,7 +31,6 @@
     top: 0;
     height: 100%;
     width: 100%;
-    border: 1px solid red;
 }
 
     body {
@@ -57,25 +57,26 @@
 
 <div class="iframe-container">
     <div class="iframe-container-inner">
-            <p>Lorem Ipsum is simply dummy text o</p>
+        <iframe src="iframe.html" class="iframe" />
     </div>
 </div>
 
 <script>
 
 var container = document.querySelector('.iframe-container');
-container.addEventListener('scroll', function(e) {
-    console.log('scroll', e, container.scrollTop);
-
-setTimeout(() => {
-    container.scrollTop = 10;
-}, 0);
-}, false);
+// container.addEventListener('scroll', function(e) {
+//     console.log('scroll', e, container.scrollTop);
+//     e.preventDefault();
+//     e.stopPropagation();
+// (() => {
+//     container.scrollTop = 1;
+// }, 0);
+// }, false);
 
 container.addEventListener('touchmove', function(e) {
     console.log('scroll', e, container.scrollTop);
 
-    container.scrollTop = 10;
+    container.scrollTop = 1;
 
 }, false);
 
