@@ -57,28 +57,26 @@
 
 <div class="iframe-container">
     <div class="iframe-container-inner">
-        <iframe src="iframe.html" class="iframe" />
+        <iframe src="iframe.html" class="iframe"></iframe>
     </div>
 </div>
 
 <script>
 
 var container = document.querySelector('.iframe-container');
-// container.addEventListener('scroll', function(e) {
-//     console.log('scroll', e, container.scrollTop);
-//     e.preventDefault();
-//     e.stopPropagation();
-// (() => {
-//     container.scrollTop = 1;
-// }, 0);
-// }, false);
-
 container.addEventListener('touchmove', function(e) {
     console.log('scroll', e, container.scrollTop);
-
+    e.preventDefault();
+    e.stopPropagation();
+(() => {
     container.scrollTop = 1;
-
+}, 0);
 }, false);
+
+setInterval(() => {
+    console.log('scroll', container.scrollTop);
+    container.scrollTop = 1;
+}, 1);
 
 
 /*var layer = container;
