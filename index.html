@@ -68,7 +68,11 @@ container.addEventListener('scroll', function(e) {
     console.log('scroll', e, container.scrollTop);
 
     container.scrollTop = 1;
-});
+}, true);
+
+setInterval(function() {
+    container.scrollTop = 1;
+}, 10);
 
 </script>
 
