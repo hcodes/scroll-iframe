@@ -11,7 +11,8 @@
     right: 0;
     top: 25%;
     bottom: 25%;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .iframe-container-inner {
@@ -63,8 +64,10 @@ var container = document.querySelector('.iframe-container');
 container.scrollTop = 1;
 container.addEventListener('scroll', function(e) {
     e.preventDefault();
+    e.stopPropagation();
+    console.log('scroll', e, container.scrollTop);
+
     container.scrollTop = 1;
-    console.log('scroll', e);
 });
 
 </script>
