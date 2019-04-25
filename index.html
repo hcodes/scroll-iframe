@@ -13,7 +13,7 @@
     height: 200px;
     width: 100%;
     overflow-x: hidden;
-    overflow-y: scroll;
+    scroll-behavior: auto;
 }
 
 .iframe-container-inner {
@@ -67,19 +67,18 @@ var container = document.querySelector('.iframe-container');
 container.addEventListener('scroll', function(e) {
     console.log('scroll', e, container.scrollTop);
 
+setTimeout(() => {
     container.scrollTop = 10;
-}, true);
+}, 0);
+}, false);
 
-container.addEventListener('touchstart', function(e) {
+container.addEventListener('touchmove', function(e) {
     console.log('scroll', e, container.scrollTop);
 
     container.scrollTop = 10;
-}, true);
 
+}, false);
 
-setInterval(function() {
-    container.scrollTop = 10;
-}, 10);
 
 /*var layer = container;
 layer.bind('touchstart', function (ev) {
