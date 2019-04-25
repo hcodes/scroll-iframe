@@ -17,7 +17,7 @@
 
 .iframe-container-inner {
     width: 100%;
-    height: calc(100% + 2px);
+    height: calc(100% + 20px);
 }
 
 
@@ -61,17 +61,16 @@
 <script>
 
 var container = document.querySelector('.iframe-container');
-container.scrollTop = 1;
 container.addEventListener('scroll', function(e) {
     e.preventDefault();
     e.stopPropagation();
     console.log('scroll', e, container.scrollTop);
 
-    container.scrollTo(1, 1);
+    container.scrollTo(10, 10);
 }, true);
 
 setInterval(function() {
-    container.scrollTo(1, 1);
+    container.scrollTo(10, 10);
 }, 10);
 
 </script>
