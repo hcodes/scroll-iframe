@@ -62,16 +62,34 @@
 
 var container = document.querySelector('.iframe-container');
 container.addEventListener('scroll', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
     console.log('scroll', e, container.scrollTop);
 
-    container.scrollTo(10, 10);
+    container.scrollTop = 10;
 }, true);
 
+container.addEventListener('touchstart', function(e) {
+    console.log('scroll', e, container.scrollTop);
+
+    container.scrollTop = 10;
+}, true);
+
+
 setInterval(function() {
-    container.scrollTo(10, 10);
+    container.scrollTop = 10;
 }, 10);
+
+/*var layer = container;
+layer.bind('touchstart', function (ev) {
+    var $this = $(this);
+    var layer = $layer.get(0);
+
+    if ($this.scrollTop === 0) $this.scrollTo(1, 1);
+    var scrollTop = layer.scrollTop;
+    var scrollHeight = layer.scrollHeight;
+    var offsetHeight = layer.offsetHeight;
+    var contentHeight = scrollHeight - offsetHeight;
+    if (contentHeight == scrollTop) $this.scrollTo(scrollTop-1, scr);
+});*/
 
 </script>
 
